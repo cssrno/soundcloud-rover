@@ -1,0 +1,73 @@
+{
+  "name": "@lchevalier/soundcloud",
+  "version": "0.1.0",
+  "description": "SoundCloud Rover",
+  "homepage": "#",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "scripts": {
+    "css": "npm-run-all --sequential css-compile css-prefix",
+    "css-compile": "node-sass --include-path node_modules/swiper/dist/css --include-path node_modules/bootstrap/scss --output-style expanded  --source-map true --source-map-contents true --precision 6 scss/template.scss ../public/css/template.css",
+    "css-prefix": "postcss --config postcss.config.js --replace \"../public/css/template.css\"",
+    "js": "npm-run-all --sequential js-build-fa js-concat js-clean-fa",
+    "js-build-fa": "etdfabuilder -o js/fa-build.js",
+    "js-clean-fa": "rimraf js/fa-build.js",
+    "js-concat": "concat -o ../public/js/template.js node_modules/swiper/dist/js/swiper.js js/custom.js",
+    "watch": "npm-run-all --parallel watch-css watch-js",
+    "watch-css": "nodemon --ignore js/ -e scss -x \"npm run css\"",
+    "watch-js": "nodemon --ignore scss/ --ignore js/fa-build.js --ignore js/template.js -e js -x \"npm run js\""
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "~5.2.0",
+    "@fortawesome/fontawesome-pro": "~5.2.0",
+    "autoprefixer": "^8.1.0",
+    "bootstrap": "~4.2",
+    "concat": "^1.0.3",
+    "etdfabuilder": "git+https://gitlab.etd-solutions.com/etd-solutions/etdfabuilder.git#0.1.0",
+    "jquery": "^3.3.1",
+    "mkdir": "^0.0.2",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
+    "npm-run-all": "^4.1.2",
+    "popper.js": "^1.12.9",
+    "postcss-cli": "^5.0.0",
+    "rimraf": "^2.6.2",
+    "swiper": "^4.4.6"
+  },
+  "browserslist": [
+    "last 1 major version",
+    ">= 1%",
+    "Chrome >= 45",
+    "Firefox >= 38",
+    "Edge >= 12",
+    "Explorer >= 10",
+    "iOS >= 9",
+    "Safari >= 9",
+    "Android >= 4.4",
+    "Opera >= 30"
+  ],
+  "etdfabuilder": {
+    "pro": {
+      "light": [
+        "phone",
+        "location-arrow",
+        "envelope",
+        "facebook-square",
+        "twitter"
+      ]
+    },
+    "free": {
+      "brands": [
+        "facebook-f",
+        "instagram",
+        "twitter"
+      ]
+    }
+  },
+  "dependencies": {
+    "jquery-pjax": "^2.0.1"
+  }
+}
