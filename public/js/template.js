@@ -11719,8 +11719,10 @@
  * @author       Louison Chevalier
  **/
 
-$(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container');
-$(document).pjax('[data-pjax-toggle] a, a[data-pjax-toggle]', '#pjax-container', {push : false});
+$.pjax.defaults.timeout = 3000;
+$(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container', {timeout : 3000});
+$(document).pjax('[data-pjax-toggle] a, a[data-pjax-toggle]', '#pjax-container', {push : false, timeout : 3000});
+
 //Form ajax
 $(document).on('submit', 'form[data-pjax]', function(event) {
     $.pjax.submit(event, '#pjax-container')
@@ -11747,7 +11749,7 @@ $(document).ready(function () {
             window.location.href = "/recherche/" + e.target.elements[0].value;
     });
 
-    //Test Ajax
+    /*Test Ajax
     $("#testajax").click(function (e) {
 
         e.preventDefault();
@@ -11761,7 +11763,7 @@ $(document).ready(function () {
                 //Erreur
             }
         })
-    })
+    })*/
 
 
     //Navigation

@@ -47,19 +47,25 @@
                 </div>
             </nav>
         </div>
+
+
+        @include("_header")
+
         <main id="pjax-container" class="container">
-            @include("_header")
             @yield('content')
-            @include("_footer")
         </main>
+
+        @auth
+            <a href="/nouvelle" data-pjax>Insérer une musique</a><br><br>
+        @endauth
+        @include("_footer")
         <nav class="navbar-audio">
             <audio id="audio" controls src=""></audio>
         </nav>
     </div>
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery.pjax.js') }}"></script>
     <script src="{{ asset('js/template.js') }}"></script>
 </body>
 </html>

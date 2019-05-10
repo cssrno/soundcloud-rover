@@ -2,10 +2,6 @@
 
 @section('content')
 
-    @auth
-        <a href="/nouvelle" data-pjax>Insérer une musique</a><br><br>
-    @endauth
-
     <section class="container-list">
         <h3>Écoutez gratuitement les dernières tendances de la communauté SoundCloud</h3>
         @include("_chansons", ["chansons" => $chansons])

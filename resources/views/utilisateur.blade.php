@@ -19,5 +19,4 @@
     Il est suivi par  {{$utilisateur->ilsMeSuivent->count()}} personne(s)
     <br>
     @include("_chansons", ["chansons" => $utilisateur->chansons])
-
 @endsection
