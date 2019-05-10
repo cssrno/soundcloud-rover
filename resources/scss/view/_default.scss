@@ -69,6 +69,15 @@ main{
     }
   }
 }
+.nav-hero-right{
+  text-align: right;
+  button{
+    color: $white;
+  }
+  .dropdown-item{
+    color: $primary;
+  }
+}
 
 
 

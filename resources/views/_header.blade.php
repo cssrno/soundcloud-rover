@@ -19,9 +19,12 @@
         <div class="swiper-pagination"></div>
     </div>
 </header>
-<section class="container-search">
-    <form id="search" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" name="search" required placeholder="Recherchez des artistes, des groupes, des titres et des podcasts">
-        <input class="btn btn-primary"  type="submit">
-    </form>
-</section>
+@guest
+@else
+    <section class="container-search">
+        <form id="search" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" name="search" required placeholder="Recherchez des artistes, des groupes, des titres et des podcasts">
+            <input class="btn btn-primary"  type="submit">
+        </form>
+    </section>
+@endguest

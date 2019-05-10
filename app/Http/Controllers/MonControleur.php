@@ -19,8 +19,6 @@ class MonControleur extends Controller
     }
 
     public function creer(Request $request) {
-        //print_r($_FILES);
-        //die(1);
         if ($request->hasFile('chanson') && $request->file('chanson')->isValid()){
             $c = new Chanson();
             $c->nom = $request->input('nom');
@@ -31,7 +29,7 @@ class MonControleur extends Controller
             $c->fichier = str_replace("public/", "/storage/", $c->fichier);
             $c->save();
         }
-        return redirect("/");
+        return redirect("/")->with('toastr', ['statut' => 'success', 'message' => 'Chanson insérée']);
     }
 
     public function utilisateur($id) {
@@ -47,10 +45,10 @@ class MonControleur extends Controller
     public function suivi($id){
         $utilisateur = User::find($id);
         if($utilisateur==false){
-            abort('403');
+            return redirect('/')->with('toastr', ['statut' => 'error', 'message' => 'Problème']);
         }
         Auth::user()->jeLesSuit()->toggle($id);
-        return back();
+        return back()->with('toastr', ['statut' => 'success', 'message' => 'Suivi modifié']);
     }
 
     public function recherche($s){
