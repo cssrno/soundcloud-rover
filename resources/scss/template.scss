@@ -8,13 +8,76 @@
  **/
 
 
+@import "custom/functions";
+@import "custom/variables";
+@import "custom/mixins";
 
-//Bootstrap
-@import "bootstrap";
+// Bootstrap (4.1.3) components
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/transitions";
+@import "bootstrap/dropdown";
+@import "bootstrap/button-group";
+@import "bootstrap/input-group";
+@import "bootstrap/custom-forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
+@import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+@import "bootstrap/pagination";
+@import "bootstrap/badge";
+@import "bootstrap/jumbotron";
+@import "bootstrap/alert";
+@import "bootstrap/progress";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/close";
+@import "bootstrap/modal";
+@import "bootstrap/tooltip";
+@import "bootstrap/popover";
+@import "bootstrap/carousel";
+@import "bootstrap/utilities";
+@import "bootstrap/print";
 
-//Swiper
-@import "swiper";
+// Custom components
+@import "custom/reboot";
+@import "custom/utilities";
+@import "custom/alert";
+@import "custom/avatar";
+@import "custom/badge";
+@import "custom/buttons";
+@import "custom/card";
+@import "custom/chart";
+@import "custom/close";
+@import "custom/content";
+@import "custom/custom-forms";
+@import "custom/dropdown";
+@import "custom/footer";
+@import "custom/forms";
+@import "custom/header";
+@import "custom/icons";
+@import "custom/input-group";
+@import "custom/list-group";
+@import "custom/map";
+@import "custom/mask";
+@import "custom/modal";
+@import "custom/nav";
+@import "custom/navbar";
+@import "custom/pagination";
+@import "custom/popover";
+@import "custom/progress";
+@import "custom/separator";
+@import "custom/tables";
+@import "custom/type";
+@import "custom/audio";
 
-//View
-@import "view/toastr";
-@import "view/default";
+// (Plugins)
+@import "custom/vendors";
+@import "custom/nucleo";

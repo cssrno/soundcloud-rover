@@ -1,13 +1,18 @@
 @extends('layouts.app')
-
 @section('content')
-
-    <section class="container-list">
-        <h3>Écoutez gratuitement les dernières tendances de la communauté SoundCloud</h3>
-        @include("_chansons", ["chansons" => $chansons])
-    </section>
-
-    {{--<a href="#" id="testajax">Testons l'jax</a>
-    <div id="aremplir"></div>--}}
-
+<div class="container-fluid mt--7" >
+    <div class="card shadow">
+        <div class="card-header border-0">
+            <h3 class="mb-0">Latest trends</h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+                <tbody>
+                    @include("_chansons", ["chansons" => $chansons])
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 @endsection
+

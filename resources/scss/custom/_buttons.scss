@@ -1,0 +1,197 @@
+//
+// Icon buttons
+//
+
+// General styles
+
+.btn {
+  position: relative;
+  text-transform: $btn-text-transform;
+  transition: $transition-base;
+  letter-spacing: $btn-letter-spacing;
+  font-size: $input-btn-font-size;
+  will-change: transform;
+
+  &:hover {
+    @include box-shadow($btn-hover-box-shadow);
+    transform: translateY($btn-hover-translate-y);
+  }
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+
+
+  // Icons
+
+  i:not(:first-child),
+  svg:not(:first-child) {
+    margin-left: .5rem;
+  }
+
+  i:not(:last-child),
+  svg:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
+
+// Remove translateY and margin animation when btn is included in a btn-group or input-group
+
+.btn-group,
+.input-group {
+  .btn {
+    margin-right: 0;
+    transform: translateY(0);
+  }
+}
+
+
+// Size variations
+
+.btn-sm {
+  font-size: $input-btn-font-size-sm;
+}
+
+.btn-lg {
+  font-size: $input-btn-font-size-lg;
+}
+
+
+// Some quick fixes (to revise)
+
+// Fixes
+[class*="btn-outline-"] {
+  border-width: 1px;
+}
+
+.btn-outline-secondary {
+  color: darken(theme-color("secondary"), 50%);
+}
+
+.btn-inner--icon {
+  i:not(.fa) {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.btn-link {
+  font-weight: $btn-font-weight;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+.btn-neutral {
+  color: theme-color("primary");
+}
+
+//
+// Brand buttons
+//
+
+
+// Color variations
+
+@each $color, $value in $brand-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+//
+// Icon buttons
+//
+
+.btn-icon {
+  .btn-inner--icon {
+    img {
+      width: 20px;
+    }
+  }
+
+  .btn-inner--text:not(:first-child) {
+    margin-left: 0.75em;
+  }
+
+  .btn-inner--text:not(:last-child) {
+    margin-right: 0.75em;
+  }
+}
+
+
+// Button only with icon and NO text
+
+.btn-icon-only {
+  width: 2.375rem;
+  height: 2.375rem;
+  padding: 0;
+}
+
+a.btn-icon-only {
+  line-height: 2.5;
+}
+
+.btn-icon-only.btn-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+//
+// Clipboard button
+// dedicated element for copying icons
+//
+
+.btn-icon-clipboard {
+  margin: 0;
+  padding: 1.5rem;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.25;
+  color: $gray-800;
+  background-color: $gray-100;
+  border-radius: $border-radius;
+  border: 0;
+  text-align: left;
+  font-family: inherit;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width: 100%;
+  margin: .5rem 0;
+
+  &:hover {
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, .1) 0 0 0 1px, rgba(0, 0, 0, .1) 0 4px 16px;
+  }
+
+  > div {
+    align-items: center;
+    display: flex;
+  }
+
+  i {
+    box-sizing: content-box;
+    color: theme-color("primary");
+    vertical-align: middle;
+    font-size: 1.5rem;
+  }
+
+  span {
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-left: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+}

@@ -24,7 +24,7 @@
     "@fortawesome/fontawesome-free": "~5.2.0",
     "@fortawesome/fontawesome-pro": "~5.2.0",
     "autoprefixer": "^8.1.0",
-    "bootstrap": "~4.2",
+    "bootstrap": "4.2.1",
     "concat": "^1.0.3",
     "etdfabuilder": "git+https://gitlab.etd-solutions.com/etd-solutions/etdfabuilder.git#0.1.0",
     "jquery": "^3.3.1",

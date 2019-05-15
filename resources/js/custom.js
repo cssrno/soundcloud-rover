@@ -18,7 +18,7 @@ $(document).on('submit', 'form[data-pjax]', function(event) {
 
 
 $(document).ready(function () {
-    $('#app').on('click', 'a.chanson', function (e) {
+    $('body').on('click', 'a.chanson', function (e) {
         e.preventDefault();
         var f = $(this).attr('data-file');
         //console.log(f);
